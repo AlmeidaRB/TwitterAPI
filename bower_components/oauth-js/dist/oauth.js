@@ -1,32 +1,3 @@
-OAuth.initialize('y66bzByuMneV1Dis54uenKdJ1ZY');
-
-OAuth.popup('twitter')
-    .done(function(result) {
-      //use result.access_token in your API request
-      //or use result.get|post|put|del|patch|me methods (see below)
-    })
-    .fail(function (err) {
-      //handle error with err
-});
-
-//Let's say the /me endpoint on the provider API returns a JSON object
-//with the field "name" containing the name "John Doe"
-OAuth.popup(provider)
-.done(function(result) {
-    result.get('/me')
-    .done(function (response) {
-        //this will display "John Doe" in the console
-        console.log(response.name);
-    })
-    .fail(function (err) {
-        //handle error with err
-    });
-})
-.fail(function (err) {
-    //handle error with err
-});
-
-
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.oauthioWeb = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 module.exports = {
   oauthd_url: "https://oauth.io",
