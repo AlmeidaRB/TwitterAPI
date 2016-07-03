@@ -1,5 +1,5 @@
 //main module
-  var app = angular.module('twitterApp', ['ngSanitize','twitterApp.services']);
+  var app = angular.module('twitterAPI', ['ngSanitize','twitterAPI.services']);
 
 
 
