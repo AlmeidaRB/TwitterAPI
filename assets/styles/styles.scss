@@ -1,3 +1,10 @@
+.odd {
+  color: red;
+}
+.even {
+  color: blue;
+}
+
 //-----------------------------------------------------------------//
 ///Splash Styling
 //-----------------------------------------------------------------//
@@ -124,7 +131,7 @@ body {
 
 .col-xs-12 {
     width: 100%;
-    padding: 40px;
+    padding: 20px;
 }
 
 #connectButton {
@@ -146,4 +153,8 @@ hr {
   display: block;
   width: 100%;
   padding: 10px;
+}
+
+.row {
+  margin-left: 0px;
 }

@@ -13,13 +13,8 @@
     <script src="app/app.js"></script>
     <script src="app/controller.js"></script>
     <script src="app/service.js"></script>
-
-
-
 </head>
 <body>
-
-  <body>
   <div id="splash">
     <div class="container">
     	<div class="content">
@@ -28,50 +23,49 @@
     	</div>
     </div>
   </div>
-
   <div class="wrapper">
-  <div ng-controller="TwitterController">
-        <span class="logo"><img src="assets/styles/images/backbird2.png" alt="" />
-          <h1>look back at it</h1>
-          <hr>
-        </span>
-        <div class="slogan">
-          <h3>Search back through tweets with backbird.</h3>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <button ng-click="connectButton()" id="connectButton" type="button" class="btn btn-primary">Connect Twitter</button>
-                <button ng-click="refreshTimeline()" id="getTimelineButton" type="button" class="btn btn-info" style="display:none;">Get My Timeline</button>
-                <button ng-click="signOut()" id="signOut" type="button" class="btn btn-link" style="display:none;">Sign Out</button>
-            </div>
-            <div class="col-xs-6">
-                <input type="text" ng-model="searchTerm" class="form-control" id="searchBox" placeholder="Enter search term here" ng-show="connectedTwitter" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12" id="results">
-                <div class="row" ng-repeat="t in tweets | filter:searchTerm">
-
-                    <div class="col-xs-2 col-sm-1">
-                        <img ng-src="{{t.user.profile_image_url}}" class="img-circle">
-                    </div>
-                    <div class="col-xs-10 col-sm-11">
-                        <small>{{t.user.name}}</small>
-                        <br> <span ng-bind-html="t.text"></span>
-                    </div>
-
-                </div>
-
-                <div ng-show="rateLimitError">
-                    Rate limit reached. You are making too many requests.
-                </div>
-                <div>
-                    <br/>
-                    <input type="button" class="btn btn-info" id="load-more" ng-click="refreshTimeline(tweets[tweets.length-1].id)" ng-show="connectedTwitter" value="Load More" />
-                </div>
-            </div>
-        </div>
+    <div ng-controller="TwitterController">
+      <span class="logo"><img src="assets/styles/images/backbird2.png" alt="" />
+        <h1>look back at it</h1>
+        <hr>
+      </span>
+    <div class="slogan">
+      <h3>Search back through your personal timeline with backbird.</h3>
     </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <button ng-click="connectButton()" id="connectButton" type="button" class="btn btn-primary">Connect Twitter</button>
+          <button ng-click="refreshTimeline()" id="getTimelineButton" type="button" class="btn btn-info" style="display:none;">Get My Timeline</button>
+        <button ng-click="signOut()" id="signOut" type="button" class="btn btn-link" style="display:none;">Sign Out</button>
+      </div>
+      <div class="col-xs-6">
+        <input type="text" ng-model="searchTerm" class="form-control" id="searchBox" placeholder="Enter search term here" ng-show="connectedTwitter" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12" id="results">
+        <div class="row" ng-repeat="t in tweets | filter:searchTerm">
+          <div class="col-xs-2 col-sm-1">
+            <img ng-src="{{t.user.profile_image_url}}" class="img-circle">
+          </div>
+          <div class="col-xs-10 col-sm-11">
+            <small>{{t.user.name}}</small>
+            <br> <span ng-bind-html="t.text"></span>
+          </div>
+        </div>
+        <div ng-show="rateLimitError">
+          Rate limit reached. You are making too many requests.
+        </div>
+          <div>
+              <br/>
+              <input type="button" class="btn btn-info" id="load-more" ng-click="refreshTimeline(tweets[tweets.length-1].id)" ng-show="connectedTwitter" value="Load More" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+
   </div>
 </body>
 </html>

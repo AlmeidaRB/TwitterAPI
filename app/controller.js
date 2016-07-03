@@ -3,7 +3,7 @@ app.controller('TwitterController', function($scope, $q, twitterService) {
 
       twitterService.initialize();
 
-      //using the OAuth authorization result get the latest 20 tweets from twitter for the user
+      //using OAuth authorization, this grabs most recent 20 from user
       $scope.refreshTimeline = function(maxId) {
           twitterService.getLatestTweets(maxId).then(function(data) {
               $scope.tweets = $scope.tweets.concat(data);
@@ -12,11 +12,11 @@ app.controller('TwitterController', function($scope, $q, twitterService) {
           });
       }
 
-      //when the user clicks the connect twitter button, the popup authorization window opens
+      //popup authorization window to connect
       $scope.connectButton = function() {
           twitterService.connectTwitter().then(function() {
               if (twitterService.isReady()) {
-                  //if the authorization is successful, hide the connect button and display the tweets
+                  //if authorized worked, hide connect button and show tweets
                   $('#connectButton').fadeOut(function() {
                       $('#getTimelineButton, #signOut').fadeIn();
                       $scope.refreshTimeline();
@@ -28,7 +28,7 @@ app.controller('TwitterController', function($scope, $q, twitterService) {
           });
       }
 
-      //sign out clears the OAuth cache, the user will have to reauthenticate when returning
+      //Sign out clears OAuth cache so user has to reauthenticate
       $scope.signOut = function() {
           twitterService.clearCache();
           $scope.tweets.length = 0;
@@ -40,7 +40,7 @@ app.controller('TwitterController', function($scope, $q, twitterService) {
           });
       }
 
-      //if the user is a returning user, hide the sign in button and display the tweets
+      //if the user is returning user, hide sign in button and display the tweets
       if (twitterService.isReady()) {
           $('#connectButton').hide();
           $('#getTimelineButton, #signOut').show();
