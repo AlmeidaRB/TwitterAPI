@@ -5,7 +5,7 @@
   $(function(){
      setTimeout(function() {
         $("#splash").fadeOut("slow", function() {
-           $("#content").show();
+           $(".wrapper").show();
         });
      }, 5000);
   });
