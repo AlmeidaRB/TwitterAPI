@@ -12,11 +12,11 @@ app.controller('TwitterController', function($scope, $q, twitterService) {
           });
       }
 
-      //popup authorization window to connect
+      //popup window to connect
       $scope.connectButton = function() {
           twitterService.connectTwitter().then(function() {
               if (twitterService.isReady()) {
-                  //if authorized worked, hide connect button and show tweets
+                  //if authorized, hide connect button, show tweets
                   $('#connectButton').fadeOut(function() {
                       $('#getTimelineButton, #signOut').fadeIn();
                       $scope.refreshTimeline();
@@ -40,7 +40,7 @@ app.controller('TwitterController', function($scope, $q, twitterService) {
           });
       }
 
-      //if the user is returning user, hide sign in button and display the tweets
+      //if the user is returning, hide sign in button and display tweets
       if (twitterService.isReady()) {
           $('#connectButton').hide();
           $('#getTimelineButton, #signOut').show();

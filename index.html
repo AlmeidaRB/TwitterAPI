@@ -54,18 +54,40 @@
           </div>
         </div>
         <div ng-show="rateLimitError">
-          Rate limit reached. You are making too many requests.
+        Rate limit reached. You are making too many requests.
         </div>
           <div>
-              <br/>
-              <input type="button" class="btn btn-info" id="load-more" ng-click="refreshTimeline(tweets[tweets.length-1].id)" ng-show="connectedTwitter" value="Load More" />
+            <br/>
+            <input type="button" class="btn btn-info" id="load-more" ng-click="refreshTimeline(tweets[tweets.length-1].id)" ng-show="connectedTwitter" value="Load More" />
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="footer">
-
+    <div class="footer">
+    <section class="copyright">All content copyright <a href="/">Rachel Almeida</a> &copy; 2016 &bull; All rights reserved.</section>
+    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">How was this actually made?</button>
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">How was this actually made?</h4>
+          </div>
+            <div class="modal-body">
+              <h3>The Code</h3>
+              <p>This application is a single HTML page displaying results of the Twitter API, with JavaScript, utlizing Angular.js and CSS utilizing SASS and Bootstrap framework. The main 'twitterAPP' module lives in the app.js file, along with one additional function to handle the introductory animations. The controllor.js handles Oauth authorization and tweet display while the service.js handles the 'twitterService' factory.</p>
+              <h3>The Developer</h3>
+              <p>Built by Rachel Almeida using Oauth to pull from Twitter's API, while utilizing Angular.js. Visit the <a href="https://github.com/AlmeidaRB/TwitterAPI" target="_blank">github repo.</a></p>
+              <h3>Resources</h3>
+              <p>Built with the help of <a href="https://oauth.io/" target="_blank">Oauth.io</a></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>

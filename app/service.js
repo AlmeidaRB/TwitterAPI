@@ -4,12 +4,11 @@ angular.module('twitterApp.services', []).factory('twitterService', function($q)
 
     return {
         initialize: function() {
-            //initialize OAuth.io with public key of the application
+            //pit in my public key of the application here to kick off Oauth
             OAuth.initialize('y66bzByuMneV1Dis54uenKdJ1ZY', {
                 cache: true
             });
-            //try to create an authorization result when the page loads,
-            // this means a returning user won't have to click the twitter button again
+            //this creates an authorization result when the page loads, aka returning user that HASN'T signed out won't have to sign back in.
             authorizationResult = OAuth.create("twitter");
         },
         isReady: function() {
@@ -37,19 +36,19 @@ angular.module('twitterApp.services', []).factory('twitterService', function($q)
         },
         getLatestTweets: function(maxId) {
             //create a deferred object using Angular's $q service
+            //**this is a new service to me, had to research this**
             var deferred = $q.defer();
             var url = '/1.1/statuses/home_timeline.json';
             if (maxId) {
                 url += '?max_id=' + maxId;
             }
             var promise = authorizationResult.get(url).done(function(data) {
-                // https://dev.twitter.com/docs/api/1.1/get/statuses/home_timeline
                 // when the data is retrieved resolve the deferred object
                 deferred.resolve(data);
             }).fail(function(err) {
                 deferred.reject(err);
             });
-            //return the promise of the deferred object
+            //return promise of deferred object
             return deferred.promise;
         }
     }

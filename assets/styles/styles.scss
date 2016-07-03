@@ -158,3 +158,23 @@ hr {
 .row {
   margin-left: 0px;
 }
+
+.footer {
+  width: 100%;
+  height: auto;
+  border-top: 1px dotted #00ACED;
+  color: #66757F;
+  text-align: center;
+  background: white;
+}
+
+.footer .btn-sm {
+  font-size: 16px;
+  margin: 20px;
+}
+
+.copyright {
+  font-size: 16px;
+  padding: 10px;
+
+}
