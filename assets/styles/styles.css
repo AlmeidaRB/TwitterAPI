@@ -88,7 +88,7 @@ body {
 
 .wrapper .logo {
   display: block;
-  padding: 50px;
+  padding: 150px;
   background: #00ACED;
   color: white; }
 
@@ -130,7 +130,7 @@ hr {
 
 .footer {
   width: 100%;
-  height: auto;
+  height: 150px;
   border-top: 1px dotted #00ACED;
   color: #66757F;
   text-align: center;
@@ -138,10 +138,17 @@ hr {
 
 .footer .btn-sm {
   font-size: 16px;
-  margin: 15px; }
+  margin: 15px;
+  background-color: #00ACED; }
 
 .copyright {
   font-size: 16px;
-  margin-top: 15px; }
+  margin-top: 45px; }
+
+#myModal {
+  font-size: 18px; }
+
+.modal-header {
+  background: #00ACED; }
 
 /*# sourceMappingURL=styles.css.map */
