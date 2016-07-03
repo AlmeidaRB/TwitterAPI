@@ -4,7 +4,8 @@
     <title>AngularJS Instant Tweet Search Application</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/styles/styles.css" />
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,300' rel='stylesheet' type='text/css'>    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="/bower_components/oauth-js/dist/oauth.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
@@ -12,23 +13,24 @@
     <script src="app/app.js"></script>
     <script src="app/controller.js"></script>
     <script src="app/service.js"></script>
-    <style>
-        .container {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
 
-        #results .row {
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-    </style>
+
+
 </head>
 <body>
 
-  <img onload="this.style.opacity='0';"  src="http://www.torpedo7.co.nz/images/banners/2015-09-07/landing-page-content/video/20160223_newseason_icebreaker_990x550_still.jpg" />
+  <body>
+  <div id="splash">
+    <div class="container">
+    	<div class="content">
+    		<h2 class="frame-1">Hello momentfeed.</h2>
+    		<h2 class="frame-2">Welcome to backbird.</h2>
+    	</div>
+    </div>
+  </div>
+  <div id="content">
 
-    <div class="container" ng-controller="TwitterController">
+  <div class="wrapper" ng-controller="TwitterController">
         <h1>AngularJS Instant Tweet Search Application</h1>
         <div class="row">
             <div class="col-xs-6">
@@ -64,5 +66,6 @@
             </div>
         </div>
     </div>
+  </div>
 </body>
 </html>
