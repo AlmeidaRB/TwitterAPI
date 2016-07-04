@@ -101,24 +101,36 @@ body {
 }
 
 #results .row {
-    margin-top: 15px;
-    margin-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  border: 1px solid #CCCCCC;
+  background-color: #FFFFFF;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .col-xs-12 {
     width: 50%;
     margin: auto;
+    float: none;
 }
 
 .col-xs-6 {
     width: 50%;
     margin: auto;
     padding: 20px;
+    float: none;
 }
 
 .col-xs-4 {
     width: 20%;
     margin: auto;
+    float: none;
+}
+
+.col-sm-11 {
+  padding-left: 25px;
 }
 
 .wrapper {
@@ -145,11 +157,6 @@ body {
   text-align: center;
 }
 
-.col-xs-12 {
-    width: 100%;
-    padding: 20px;
-}
-
 #connectButton {
   left: 0;
   right: 0;
@@ -173,6 +180,7 @@ hr {
 
 .row {
   margin-left: 0px;
+  margin-right: 0px;
 }
 
 .row .ng-scope {
@@ -181,6 +189,9 @@ hr {
   padding: 10px;
 }
 
+#load-more {
+  margin-bottom: 20px;
+}
 
 
 //Footer styling

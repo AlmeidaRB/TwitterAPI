@@ -14,19 +14,26 @@ app.controller('TwitterController', function($scope, $q, twitterService) {
 
       //popup window to connect
       $scope.connectButton = function() {
-          twitterService.connectTwitter().then(function() {
-              if (twitterService.isReady()) {
-                  //if authorized, hide connect button, show tweets
-                  $('#connectButton').fadeOut(function() {
-                      $('#getTimelineButton, #signOut').fadeIn();
-                      $scope.refreshTimeline();
-                      $scope.connectedTwitter = true;
-                  });
-              } else {
-
+        function success() {
+          if (twitterService.isReady()) {
+            //if authorized, hide connect button, show tweets
+            $('#connectButton').fadeOut(function() {
+              $('#getTimelineButton, #signOut').fadeIn();
+              $scope.refreshTimeline();
+              $scope.connectedTwitter = true;
+            });
+          } else {
               }
-          });
-      }
+            }
+
+          function error(errorText) {
+          alert(errorText);
+          }
+
+          twitterService
+            .connectTwitter()
+            .then(success, error);
+                }
 
       //Sign out clears OAuth cache so user has to reauthenticate
       $scope.signOut = function() {
