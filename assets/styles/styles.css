@@ -83,6 +83,19 @@ body {
   margin-top: 15px;
   margin-bottom: 15px; }
 
+.col-xs-12 {
+  width: 50%;
+  margin: auto; }
+
+.col-xs-6 {
+  width: 50%;
+  margin: auto;
+  padding: 20px; }
+
+.col-xs-4 {
+  width: 20%;
+  margin: auto; }
+
 .wrapper {
   display: none; }
 
@@ -127,6 +140,11 @@ hr {
 
 .row {
   margin-left: 0px; }
+
+.row .ng-scope {
+  border-bottom: 1px solid #e1e8ed;
+  background-color: #FFFFFF;
+  padding: 10px; }
 
 .footer {
   width: 100%;
