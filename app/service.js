@@ -5,7 +5,7 @@ angular.module('twitterAPI.services', []).factory('twitterService', function($q)
     return {
         initialize: function() {
             //pit in my public key of the application here to kick off Oauth
-            OAuth.initialize('Tr21OQJlenN-qu9BX0PH9UM_xuM', {
+            OAuth.initialize('xC2RLIu3PCqsTGZHWD1ZZycZVxY', {
                 cache: true
             });
             //this creates an authorization result when the page loads, aka returning user that HASN'T signed out won't have to sign back in.
