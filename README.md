@@ -1,6 +1,8 @@
 # TwitterAPI
 Twitter API
 
-A demo app utilizing twitter API and angular.js
+A simple demo app utilizing twitter API and Angular.js and bootstrap using Oauth.io.
 
-<!--Initial commit, creating repo, adding skeleton of project-->
+Visit <a href="https://oauth.io/">Oauth.io</a>
+
+View the <a href="https://almeidarb.github.io/TwitterAPI/">demo</a>
